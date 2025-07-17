@@ -1,12 +1,11 @@
-require ("dotenv").config();
+import express from "express";
+import { checkConnection } from "./src/config/db.js";
 
-const express = require ("express");
 const app = express();
+const PORT = process.env.PORT;
 
-app.get("/", (req, res) => {
-    res.send("hola Mundo");
+checkConnection();
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
-
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
