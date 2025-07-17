@@ -1,10 +1,10 @@
 
 function App() {
   return (
-    <div>
-      <span className="text-9xl ">
-        hola mundo
-      </span>
+    <div class="flex flex-row justify-between items-center ">
+      <div>hola</div>
+      <div>menu</div>
+      <div>usuario</div>
     </div>
   )
 }

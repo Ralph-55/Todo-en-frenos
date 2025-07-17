@@ -49,12 +49,19 @@ const Login = () => {
           </div>
           <div>
             <button
+              href="./app.jsx"
               type="submit"
               className="w-full px-4 py-2 font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Entrar
             </button>
           </div>
+
+          <button>
+            <a href="./app.jsx" className="text-sm text-indigo-600 hover:text-indigo-500">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </button>
         </form>
       </div>
     </div>
