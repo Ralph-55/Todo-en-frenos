@@ -8,10 +8,8 @@ const pool = mysql.createPool({
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  port: process.env.DB_PORT || 3306,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0, // Optional: Set a queue limit for the poo
+  port: process.env.DB_PORT ,
+ // Optional: Set a queue limit for the poo
 });
 
 async function checkConnection() {
