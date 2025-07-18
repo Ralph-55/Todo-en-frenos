@@ -3,11 +3,37 @@ import React, { useState } from 'react';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí se hará la petición al backend
-    console.log({ email, password });
+    setError(''); // Limpia errores previos
+
+  try {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Algo salió mal');
+      }
+
+      // Si el login es exitoso
+      console.log('Login exitoso:', data);
+      // Guarda el token para usarlo en futuras peticiones
+      localStorage.setItem('token', data.token);
+      // Redirige al usuario a la página principal de la app
+      window.location.href = '/app';
+
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
