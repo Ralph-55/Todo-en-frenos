@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Login = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [contraseña, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
@@ -15,7 +15,7 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, contraseña }),
       });
 
       const data = await response.json();
@@ -59,15 +59,15 @@ const Login = () => {
           </div>
           <div>
             <label
-              htmlFor="password"
+              htmlFor="contraseña"
               className="text-sm font-medium text-gray-700"
             >
               Contraseña
             </label>
             <input
-              type="password"
-              id="password"
-              value={password}
+              type="contraseña"
+              id="contraseña"
+              value={contraseña}
               onChange={(e) => setPassword(e.target.value)}
               required
               className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
