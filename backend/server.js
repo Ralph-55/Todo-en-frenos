@@ -4,9 +4,12 @@ import express from 'express';
 import { checkConnection } from './src/config/db.js';
 import userRuta from './src/routes/userRuta.js'; 
 import authRoutes from './src/routes/authRoutes.js';
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors()); 
 
 // Middleware para parsear JSON
 app.use(express.json());

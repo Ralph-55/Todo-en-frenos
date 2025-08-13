@@ -19,11 +19,9 @@ export const register = async (req, res) => {
             return res.status(409).json({ message: 'El correo ya existe'});
         }
 
-        // CORREGIDO: bcrypt.genSalt en lugar de getSalt
         const salt = await bcrypt.genSalt(10);
         const hashedcontraseña = await bcrypt.hash(contraseña, salt);
 
-        // Asegúrate que tu tabla y columna se llamen "password"
         const [resultado] = await pool.query('INSERT INTO usuarios (name, email, contraseña) VALUES (?, ?, ?)',
             [name, email, hashedcontraseña]
         );
