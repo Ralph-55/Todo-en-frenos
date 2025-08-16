@@ -23,7 +23,7 @@ const recentServices = [
     { id: 4, vehicle: 'Chevrolet Spark', client: 'Luis Gómez', status: 'Listo para Entrega' },
 ];
 
-const App = () => {
+const DashboardPage = () => {
   return (
     <div>
       {/* Encabezado del Dashboard */}
@@ -128,5 +128,4 @@ const App = () => {
   );
 };
 
-export default App;
-
+export default DashboardPage;

@@ -9,6 +9,7 @@ import AppLayout from './components/layout.jsx';
 import App from './App.jsx'; // Este será tu Dashboard o página principal
 import ProductList from './pages/listaproduct.jsx';
 import IngresoProductos from './pages/ingresoproductos.jsx';
+import RestockPage from './pages/Restock.jsx'; // Asegúrate de que este componente esté correctamente importado
 
 import './index.css';
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: 'IngresoProductos', // Ruta para el ingreso de productos
         element: <IngresoProductos />,
+      },
+      {
+        path: 'Restock', // Ruta para reabastecer productos
+        element: <RestockPage />, // Asegúrate de importar RestockPage desde
       },
     ],
   },

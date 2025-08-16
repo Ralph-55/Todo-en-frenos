@@ -20,14 +20,14 @@ const BellIcon = (props) => (
   </svg>
 );
 
-const Navbar = () => {
+const Navbar = ({ onMenuClick }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <header className="flex items-center justify-between w-full px-6 py-4 bg-white border border-gray-200">
       {/* Lado Izquierdo: Botón de Menú y Barra de Búsqueda */}
       <div className="flex items-center">
-        <button className="p-2 text-gray-500 rounded-md hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white">
+        <button onClick={onMenuClick} className="p-2 text-gray-500 rounded-md hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white">
           <MenuIcon className="w-6 h-6" />
         </button>
 
